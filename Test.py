@@ -9,7 +9,7 @@ def is_odd(numero):
     else:
         odd = True
 
-
+    return odd
 
 #main program
 for num in numbers:
