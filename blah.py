@@ -1,7 +1,14 @@
-blah = [1, 7, 19, 22, 24, 8]
+has_error = True
 
-for number in blah:
-    if (number % 2 == 0):
-        print(f"{number} is even.")
-    else:
-        print(f"{number} is odd")
+while has_error:
+        try:
+            number = int(input("Enter a number: "))
+            print(number)   
+
+            has_error = False
+        except:
+            print("Invalid number. Please try again.")
+            continue
+        
+
+
