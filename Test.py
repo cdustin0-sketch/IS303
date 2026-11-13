@@ -1,19 +1,13 @@
-numbers = [14, 2, 3, 45, 5]
+def has_duplicates(word):
+    for i in range(len(word)):
+        for j in range(i + 1, len(word)):
+            if word[i] == word[j]:
+                return True
+    return False
 
+words = ["hello", "world", "python", "apple"]
+results = []
+for w in words:
+    results.append(has_duplicates(w))
 
-def is_odd(numero):
-    odd = True
-
-    if numero % 2 == 0:
-        odd = False
-    else:
-        odd = True
-
-    return odd
-
-#main program
-for num in numbers:
-    if is_odd(num):
-        print(f"{num} is odd")
-    else:
-        print(f"{num} is even")
+print(results)  # [True, False, False, True]
