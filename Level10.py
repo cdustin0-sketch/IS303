@@ -42,7 +42,6 @@ def main():
     # Keeping these records in a list makes each team's values easy to access.
     team_records = season_data.to_dict(orient="records")
 
-    # The dictionary stores a list for each required win category.
     # The if/elif order makes the ranges separate, so each team is listed once.
     categories = {
         "10 or more wins:": [],
@@ -51,7 +50,7 @@ def main():
         "Fewer than 6 wins:": [],
     }
 
-    # Read the team name and wins from each regular Python dictionary.
+    # Read the team name and wins from each record, and add the team to the appropriate category.
     for team in team_records:
         # Convert the win count safely; skip incomplete or invalid rows rather
         # than stopping the whole program because of one bad value.
@@ -61,8 +60,7 @@ def main():
         wins = int(wins_value)
         name = team["Team"]
 
-        # Ignore rows without a team name because there is nothing useful to
-        # display for them.
+        # Ignore rows without a team name 
         if pd.isna(name) or not str(name).strip():
             continue
         name = str(name).strip()
