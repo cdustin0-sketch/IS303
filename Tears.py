@@ -6,4 +6,4 @@ result = park_info.query("Park == 'Everglades'")[
     ["Park", "Region", "TrailMiles"]
 ]
 
-print(result.to_string(index=False))
+print(result)
